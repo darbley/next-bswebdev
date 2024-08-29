@@ -49,3 +49,5 @@ Thumbs.db
 *.mov
 *.wmv
 
+yarn @slicemachine/init@latest --repository bswebdev-website
+node_modules
