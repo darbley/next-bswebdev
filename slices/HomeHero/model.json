@@ -1,0 +1,49 @@
+{
+  "id": "home_hero",
+  "type": "SharedSlice",
+  "name": "HomeHero",
+  "description": "HomeHero",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "hero_heading": {
+          "type": "Text",
+          "config": {
+            "label": "Hero Heading",
+            "placeholder": "Main headline in the hero"
+          }
+        },
+        "hero_copy_intro": {
+          "type": "Text",
+          "config": {
+            "label": "Hero copy intro",
+            "placeholder": "Copy intro in the hero component."
+          }
+        },
+        "hero_mobile_video": {
+          "type": "Link",
+          "config": {
+            "label": "Hero Mobile Video",
+            "placeholder": "Mobile hero background video",
+            "select": "media"
+          }
+        },
+        "hero_desktop_video": {
+          "type": "Link",
+          "config": {
+            "label": "Hero Desktop Video",
+            "placeholder": "Desktop hero background video",
+            "select": "media"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

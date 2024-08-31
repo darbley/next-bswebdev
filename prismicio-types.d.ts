@@ -67,6 +67,81 @@ export type HomeDocument<Lang extends string = string> =
 
 export type AllDocumentTypes = HomeDocument;
 
+/**
+ * Primary content in *HomeHero → Default → Primary*
+ */
+export interface HomeHeroSliceDefaultPrimary {
+  /**
+   * Hero Heading field in *HomeHero → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Main headline in the hero
+   * - **API ID Path**: home_hero.default.primary.hero_heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  hero_heading: prismic.KeyTextField;
+
+  /**
+   * Hero copy intro field in *HomeHero → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Copy intro in the hero component.
+   * - **API ID Path**: home_hero.default.primary.hero_copy_intro
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  hero_copy_intro: prismic.KeyTextField;
+
+  /**
+   * Hero Mobile Video field in *HomeHero → Default → Primary*
+   *
+   * - **Field Type**: Link to Media
+   * - **Placeholder**: Mobile hero background video
+   * - **API ID Path**: home_hero.default.primary.hero_mobile_video
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  hero_mobile_video: prismic.LinkToMediaField;
+
+  /**
+   * Hero Desktop Video field in *HomeHero → Default → Primary*
+   *
+   * - **Field Type**: Link to Media
+   * - **Placeholder**: Desktop hero background video
+   * - **API ID Path**: home_hero.default.primary.hero_desktop_video
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  hero_desktop_video: prismic.LinkToMediaField;
+}
+
+/**
+ * Default variation for HomeHero Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HomeHeroSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HomeHeroSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *HomeHero*
+ */
+type HomeHeroSliceVariation = HomeHeroSliceDefault;
+
+/**
+ * HomeHero Shared Slice
+ *
+ * - **API ID**: `home_hero`
+ * - **Description**: HomeHero
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HomeHeroSlice = prismic.SharedSlice<
+  "home_hero",
+  HomeHeroSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -81,6 +156,10 @@ declare module "@prismicio/client" {
       HomeDocumentData,
       HomeDocumentDataSlicesSlice,
       AllDocumentTypes,
+      HomeHeroSlice,
+      HomeHeroSliceDefaultPrimary,
+      HomeHeroSliceVariation,
+      HomeHeroSliceDefault,
     };
   }
 }
