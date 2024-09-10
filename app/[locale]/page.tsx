@@ -4,6 +4,7 @@ import { SliceZone } from "@prismicio/react";
 
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
+import Wrapper from "../templates/Wrapper/Wrapper";
 
 export async function generateMetadata(): Promise<Metadata> {
   const client = createClient();
@@ -20,8 +21,10 @@ export default async function Home() {
   const page = await client.getSingle("home");
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <SliceZone slices={page.data.slices} components={components} />
-    </main>
+    <Wrapper addClass='home'>
+      <main className="flex flex-col items-center justify-between">
+        <SliceZone slices={page.data.slices} components={components} />
+      </main>
+    </Wrapper>
   );
 }
