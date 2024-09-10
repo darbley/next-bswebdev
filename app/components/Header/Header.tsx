@@ -1,18 +1,19 @@
 import Link from "next/link";
+import DesktopMenu from "./DesktopMenu/DesktopMenu";
+import MobileMenu from "./MobileMenu/MobileMenu";
 
-const Header = () => {
+type HeaderProps = {
+    isMobile: string
+}
+
+const Header = ({ isMobile }: HeaderProps) => {
 
     return (
         <header className={`full z-10 relative`}>
              <div className={` flex flex-row justify-between`}>
                 <Link href={`/home`}>Logo</Link>
-                <nav >
-                    <ul className={` flex flex-row`}>
-                        <li>home</li>
-                        <li>work</li>
-                        <li>contact</li>
-                    </ul>
-                </nav>
+                { isMobile && <MobileMenu /> }
+                { !isMobile && isMobile !== null && <DesktopMenu /> }
              </div>
         </header>
 

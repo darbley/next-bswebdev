@@ -38,13 +38,13 @@ const HomeHero = ({ slice }: HomeHeroProps): JSX.Element => {
       
 
       { isMobile &&
-          <video className='z-0 absolute top-0 w-full' poster="" muted playsInline autoPlay loop>
+          <video className='z-0 absolute top-0 w-full h-full object-cover' poster="" muted playsInline autoPlay loop>
             <source src={slice.primary.hero_mobile_video.url}  type="video/mp4" />
           </video>
       }
       {
         isMobile !== null && !isMobile && 
-          <video className='z-0 absolute top-0 w-full' poster="" muted playsInline autoPlay loop>
+          <video className='z-0 absolute top-0 w-full h-full object-cover' poster="" muted playsInline autoPlay loop>
             <source src={slice.primary.hero_desktop_video.url}  type="video/mp4" />
           </video>
       }
