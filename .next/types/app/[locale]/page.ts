@@ -1,4 +1,4 @@
-// File: /Users/bradstapleton/Documents/Projects/typescript-apps/next-bswebdev/app/[locale]/page.tsx
+// File: /Users/bradstapleton/Documents/Repos/darbley-github/next-bswebdev/app/[locale]/page.tsx
 import * as entry from '../../../../app/[locale]/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
