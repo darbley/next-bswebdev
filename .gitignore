@@ -4,6 +4,7 @@
 #     https://www.atlassian.com/git/tutorials/saving-changes/gitignore
 
 # Node artifact files
+node_modules
 node_modules/
 dist/
 build/
@@ -50,6 +51,3 @@ Thumbs.db
 *.flv
 *.mov
 *.wmv
-
-yarn @slicemachine/init@latest --repository bswebdev-website
-node_modules
